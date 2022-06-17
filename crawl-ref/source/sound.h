@@ -13,7 +13,7 @@
  *************************************/
 
 // Uncomment to play sounds. winmm must be linked in if this is uncommented.
-// #define WINMM_PLAY_SOUNDS
+#define WINMM_PLAY_SOUNDS
 
 // Uncomment (and edit as appropriate) to play sounds.
 //
@@ -51,6 +51,18 @@
 #define REMOVE_JEWELLERY_SOUND   "REMOVE_JEWELLERY"
 
 #define MEMORISE_SPELL_SOUND     "MEMORISE_SPELL"
+
+#define CAST_SPELL_SOUND         "CAST_SPELL"
+
+#define CAST_CONJURATION_SOUND   "CAST_CONJURATION"
+#define CAST_HEXES_SOUND         "CAST_HEXES"
+#define CAST_SUMMONING_SOUND     "CAST_SUMMONING"
+#define CAST_POISON_SOUND        "CAST_POISON"
+#define CAST_NECROMANCY_SOUND    "CAST_NECROMANCY"
+#define CAST_FIRE_SOUND          "CAST_FIRE"
+#define CAST_ICE_SOUND           "CAST_ICE"
+#define CAST_EARTH_SOUND         "CAST_EARTH"
+#define CAST_AIR_SOUND           "CAST_AIR"
 
 
 /***********************************

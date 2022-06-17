@@ -56,6 +56,7 @@
 #include "religion.h"
 #include "shout.h"
 #include "skills.h"
+#include "sound.h"
 #include "spl-book.h"
 #include "spl-clouds.h"
 #include "spl-damage.h"
@@ -974,6 +975,46 @@ spret cast_a_spell(bool check_range, spell_type spell, dist *_target,
             _majin_speak(spell);
         did_god_conduct(DID_SPELL_CASTING, 1 + random2(5));
         count_action(CACT_CAST, spell);
+        #ifdef USE_SOUND
+            if (spell_typematch(spell, spschool::conjuration))
+            {
+                parse_sound(CAST_CONJURATION_SOUND);
+            }
+            else if (spell_typematch(spell, spschool::hexes))
+            {
+                parse_sound(CAST_HEXES_SOUND);
+            }
+            else if (spell_typematch(spell, spschool::summoning))
+            {
+                parse_sound(CAST_SUMMONING_SOUND);
+            }
+            else if (spell_typematch(spell, spschool::poison))
+            {
+                parse_sound(CAST_POISON_SOUND);
+            }
+            else if (spell_typematch(spell, spschool::necromancy))
+            {
+                parse_sound(CAST_NECROMANCY_SOUND);
+            }
+            else if (spell_typematch(spell, spschool::fire))
+            {
+                parse_sound(CAST_FIRE_SOUND);
+            }
+            else if (spell_typematch(spell, spschool::ice))
+            {
+                parse_sound(CAST_ICE_SOUND);
+            }
+            else if (spell_typematch(spell, spschool::earth))
+            {
+                parse_sound(CAST_EARTH_SOUND);
+            }
+            else if (spell_typematch(spell, spschool::air))
+            {
+                parse_sound(CAST_AIR_SOUND);
+            }
+            else
+                parse_sound(CAST_SPELL_SOUND);
+        #endif
     }
 
     finalize_mp_cost(_majin_charge_hp() ? hp_cost : 0);
